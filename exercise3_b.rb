@@ -1,5 +1,8 @@
 # Create a banking program that asks the user 5 times to enter a first name, last name, and email. This information should be stored as an array of hashes.
-# users = {first_name: [], last_name: [], email: []}
+
+# Each person should automatically be given an account number which is a randomized ten digit number.
+
+# users = {id: [], first_name: [], last_name: [], email: []}
 
 # 5.times do 
 #   puts "Enter your first name: "
@@ -13,6 +16,8 @@
 #   puts "Enter your email: "
 #   email = gets.chomp
 #   users[:email] << email
+
+#   users[:id] << Random.rand(10**10)
 # end
 
 # p users
@@ -34,7 +39,8 @@ accounts = []
 
   accounts << {first_name: first_name,
                last_name: last_name,
-               email: email}
+               email: email,
+               id: Random.rand(10**10)}
 end
 
 p accounts
