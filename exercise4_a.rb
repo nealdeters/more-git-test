@@ -20,7 +20,11 @@ until input == "done"
 end
 
 #group the students by 2's
-students.each_slice(2).to_a
+students.shuffle!
+# students.each_slice!(2).to_a
+students.each do |student|
+  puts "Group: #{students[student]} #{students[student]}"
+end
 
 #randomize the students
 
