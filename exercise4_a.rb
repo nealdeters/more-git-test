@@ -3,31 +3,37 @@
 #       Group: Lucius Cho
 #       Group: Sirius Luna
 #       Group: Severus Draco
+
+#Collect a list of names
 students = []
 input = ""
 
 puts "Please enter all of your students names: "
 
 until input == "done"
-  input = gets.chomp
-
-  if input == "done" 
-    break
-  else
+  unless input == ""
     students << input
   end
 
+  input = gets.chomp
 end
 
-#shuffle the students array
-students.shuffle!
+#shuffle the list of names
+mixed_students = students.shuffle
 
-#print out student groups
-counter = 0
+#group names together by 2's
+#when i have an odd number of names, the last group should be a group of 3
 
-students.each do |student|
-  puts "Group: #{students[counter]} #{students[counter += 1]}"
-  counter += 1
+until mixed_students.length == 0
+
+  group = mixed_students.pop(2)
+
+  print "Group: "
+  group.each do |member|
+    print "#{member} "
+  end
+  puts ""
+  print "\n"
 end
 
-p students
+#p mixed_students
