@@ -19,13 +19,15 @@ until input == "done"
 
 end
 
-#group the students by 2's
+#shuffle the students array
 students.shuffle!
-# students.each_slice!(2).to_a
-students.each do |student|
-  puts "Group: #{students[student]} #{students[student]}"
-end
 
-#randomize the students
+#print out student groups
+counter = 0
+
+students.each do |student|
+  puts "Group: #{students[counter]} #{students[counter += 1]}"
+  counter += 1
+end
 
 p students
